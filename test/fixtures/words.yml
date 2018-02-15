@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  official_word: MyString
+  dialect_word: MyString
+  city_id: MyString
+
+two:
+  official_word: MyString
+  dialect_word: MyString
+  city_id: MyString

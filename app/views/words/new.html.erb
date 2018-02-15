@@ -1,0 +1,8 @@
+<%= form_for :word, url: words_path do |f| %>
+  <%= select_tag "city_id", options_from_collection_for_select(City.all, :id, :city) %><br/>
+  <%= f.label :official_word %><br/>
+  <%= f.text_field :official_word %><br/>
+  <%= f.label :dialect_word %><br/>
+  <%= f.text_field :dialect_word %><br/>
+  <%= f.submit %>
+<% end %>

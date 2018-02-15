@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: MyString
+  district: MyString
+  city: MyString
+  coordx: 
+  coordy: 
+
+two:
+  region: MyString
+  district: MyString
+  city: MyString
+  coordx: 
+  coordy: 
