@@ -22,6 +22,7 @@ selectRegion = data => {
     url: '/words/find_region',
     data: data,
     success: function(data) {
+      console.log(data)
       $.each(data, function(i, value) {
          $('#district').append($('<option>').text(value).attr('value', value));
        });

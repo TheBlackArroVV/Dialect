@@ -2,5 +2,7 @@
   <%= word.official_word %>
   <%= word.dialect_word %>
   <%= word.city.city %>
+  <%= link_to 'Edit', edit_word_path(word.id) %>
+  <%= link_to 'Delete', word_path(word.id), method: :delete %>
   <br/>
 <% end %>

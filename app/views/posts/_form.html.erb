@@ -1,0 +1,6 @@
+<%= f.label :article %>
+<%= f.text_field :article %>
+<%= f.label :body %>
+<%= f.text_area :body %>
+<%= select_tag "category_id", options_from_collection_for_select(Category.all, :id, :name) %><br/>
+<%= f.submit "Save" %>

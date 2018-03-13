@@ -1,3 +1,4 @@
+<%= @word.id %>
 <div style="float:left">
   <select id="region" onchange="selectRegion(this.value)">
     <option>Виберіть область</option>
@@ -45,8 +46,31 @@
 <br/>
 <br/>
 
-<form name="test" method="post"  onsubmit="addWord(off.value,dial.value); return false;" >
-<input type="text" name="off" class="ntSaveForms" placeholder="Слово" size="40">
-<input type="text" name="dial" class="ntSaveForms" placeholder="Діалект" size="40">
-<button type="submit" value="Отправить">Додати</a></button>
+<form name="test"  onsubmit="editWord(off.value,dial.value); return false;" >
+  <input type="text" name="off" class="ntSaveForms" placeholder="Слово" size="40">
+  <input type="text" name="dial" class="ntSaveForms" placeholder="Діалект" size="40">
+  <button type="submit" value="Отправить">Додати</a></button>
 </form>
+
+<script type="text/javascript">
+  console.log(query.regparams)
+  editWord = (off, dial) => {
+    data = document.getElementById('city').value
+    url = '/words/' + <%= @word.id %>
+    alert(url);
+    $.ajax({
+      type: 'PATCH',
+      url: url,
+      contentType: 'application/json',
+      data: JSON.stringify({ data: data,
+              off: off,
+              dial: dial }),
+      success: function(data, off, dial) {
+        console.log('success')
+      },
+      error: function(data) {
+        console.log('error')
+      }
+    });
+  }
+</script>

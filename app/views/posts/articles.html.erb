@@ -1,0 +1,7 @@
+<%= link_to 'New', new_post_path %><br/>
+<% @articles.each do |a| %>
+  <%= a.article %>
+  <%= a.body %>
+  <%= link_to 'Edit', edit_post_path(a.id) %>
+  <%= link_to 'Delete', post_path(a.id), method: :delete %><br/>
+<% end %>
