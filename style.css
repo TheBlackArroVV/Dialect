@@ -1,0 +1,292 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Forum');
+@import url('https://fonts.googleapis.com/css?family=Spectral');
+/*
+font-family: 'Cormorant Garamond', serif; h1
+font-family: 'Forum', cursive;
+font-family: 'Alegreya', serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Spectral', serif;
+*/
+body {
+	color: #3c3c3c;
+	background-color: #f3f5f2;
+}
+
+h1 {
+	font-family: 'Cormorant Garamond', serif;
+}
+
+h2 {
+	font-family: 'Spectral', serif;
+	font-size: 2em;
+}
+
+h3 {
+	font-family: 'Spectral', serif;
+	font-size: 1.5em;
+}
+
+h4 {
+	font-family: 'Spectral', serif;
+	font-size: 1.3em;
+}
+
+p {
+	font-family: 'Spectral', serif;
+	font-size: 1em;
+}
+
+h5 {
+	font-family: 'Spectral', serif;
+	font-size: 0.9em;
+	color: #ccc
+}
+
+.blog-hr {
+	width: 10%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+a {
+	font-family: 'Spectral', serif;
+
+}
+
+a.article {
+	display: block;
+}
+.main-nav {
+	border-color: transparent;
+	background-color: white;
+	border-radius: 0px;
+	margin-bottom: 10px;
+	margin-top: 25px;
+	box-shadow: 0px 2px 20px 0px #ddd;
+}
+
+.nav-background {
+	width: 100%;
+	height: 45px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+}
+
+.nav-link {
+	color:#3c3c3c;
+	font-size: 1.3em;
+}
+
+.mylink:hover {
+	background-color: green;
+}
+.myitem:hover {
+	background-color: pink;
+}
+
+.logo {
+	text-align: center;
+}
+
+.underlogo {
+	width: 15%;
+	border-top: 1px solid #ccc !important;
+}
+.subtitle {
+	font-size: 0.8em;
+	font-family: 'Spectral', serif;
+	/* font-weight: bold;	 */
+	text-align: center;
+}
+
+#myCarousel {
+	margin: 25px 0px;
+	box-shadow: 0px 2px 20px 0px #ddd;
+}
+
+.carousel-inner .item {
+	height: 500px;
+}
+
+.article {
+	height: 100%;
+}
+
+.row .about-us {
+	box-shadow: 0px 2px 20px 0px #ddd;
+}
+.article-row{
+	margin-bottom: 50px;
+
+}
+
+.article .img{
+	max-height: 240px;
+	overflow: hidden;
+	box-shadow: 0px 2px 20px 0px #ddd;
+	
+}
+
+.article .title {
+	display: block;
+	background-color: white;
+	margin: 0;
+	text-align: center;
+	padding: 15px 20px;
+	vertical-align: middle;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: 0px 2px 20px 0px #ddd;
+
+}
+
+.about-us-img, .about-us-content {
+	background-color: white;
+	height: 300px;
+}
+
+.about-us-homepage {
+	margin: 0;
+	box-shadow: 0px 2px 20px 0px #ddd;
+	
+	
+}
+.about-us-img {
+	background-image: url("img/glenn-carstens-peters-112923.jpg");
+	background-position: center;
+
+	background-size: cover;
+}
+.about-us-content {
+	text-align: center;
+}
+
+
+footer {
+	color: #ccc;
+}
+
+/* MAP --------------------------------------------------------------------- */
+
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.add-word-btn {
+	margin: 10px 0 0 0;
+}
+
+#map {
+            
+	width: 850px;
+	height: 500px;
+	margin: 0 auto;
+	background: #ccc;
+	margin: 20px auto;
+	box-shadow: 0px 2px 20px 0px #ddd;
+}
+
+/* ARTICLES ------------------------------------------------------------*/
+
+.articles { 
+	width: 100%;
+	margin-top: 20px;
+}
+
+.articles .article .img {
+	max-height: 500px;
+	vertical-align: middle;
+	box-shadow: 0px 2px 20px 0px #ddd;
+}
+
+.articles .article {
+	margin: 0 0 50px 0;
+	padding: 0;
+
+}
+
+.red-star {
+	color: red;
+}
+/* CONTACTS */
+.feedback form {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.feedback form .form-control {
+	margin-bottom: 10px;
+}
+
+/* ABOUT US ------------------------------------------------ */
+
+
+.about-us-page > div {
+	width: 100%;
+	margin: 25px auto;
+	box-shadow: 0px 2px 20px 0px #ddd;
+}
+
+.about-us-page h2 {
+	color: white;
+	position: absolute;
+	top: 35%;
+	width:100%;
+	text-align: center;
+	text-shadow: 0 0 7px black;
+}
+
+.about-project-header img, .goals-and-audience-header img, .team-header img, .contact-us img	{
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	filter: contrast(75%);
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.about-project-header img{
+	
+}
+
+.about-project-header, .goals-and-audience-header, .team-header, .contact-us {
+	position: relative;
+	
+}
+.contact-us img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.contact-us h2 {
+	top: 10%;
+}
+
+.contact-us button {
+	position: absolute;
+	top: 50%;
+	margin-left: -83px;
+	left: 50%;
+	height: 45px;
+    font-family: fantasy;
+    color: #555
+}
+
+.about-project-body, .goals-and-audience-body, .team-body {
+	background-color: white;
+	padding: 30px 45px;
+	color: #777;
+	text-align: center;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
