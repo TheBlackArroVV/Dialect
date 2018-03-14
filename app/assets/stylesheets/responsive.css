@@ -1,0 +1,44 @@
+@media (max-width:1320px) {
+	.article .img{
+		max-height: 190px;
+    overflow: hidden;
+	}
+}
+
+@media (max-width:1094px  ) {
+	.article .img{
+		max-height: 146px;
+    overflow: hidden;
+	}
+}
+
+
+
+@media screen and (max-width: 844px) {
+	.article .img{
+		max-height: 100%;
+    overflow: hidden;
+	}
+	.nav-background {
+		width: 100%;
+		height: 252px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: white;
+	}
+}
+@media screen and (max-width:928px ) and (min-width: 845px) {
+	.article .img{
+		max-height: 146px;
+    overflow: hidden;
+	}
+	.nav-background {
+		width: 100%;
+		height: 45px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: white;
+	}
+}
