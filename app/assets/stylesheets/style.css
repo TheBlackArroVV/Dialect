@@ -165,7 +165,7 @@ a.article {
 
 }
 .about-us-img {
-	background-image: url("img/glenn-carstens-peters-112923.jpg");
+	background-image: url("/images/glenn-carstens-peters-112923.jpg");
 	background-position: center;
 
 	background-size: cover;

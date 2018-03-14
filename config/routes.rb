@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :letters
   get '/contacts', to: 'letters#index'
+  get '/map', to: 'pages#map'
+  get '/about-us', to: 'pages#about_us'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
