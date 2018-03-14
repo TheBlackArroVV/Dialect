@@ -31,12 +31,16 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# design
+gem 'bootstrap-sass'
+
 # for ajax
 gem 'jquery-rails'
 
 # regestration and administrattion
 gem 'devise'
 gem 'activeadmin'
+gem 'active_bootstrap_skin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
