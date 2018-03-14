@@ -1,11 +1,48 @@
-<%= form_for :letter, url: letters_path do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br/>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br/>
-  <%= f.label :phone %>
-  <%= f.text_field :phone %><br/>
-  <%= f.label :body %>
-  <%= f.text_area :body %><br/>
-  <%= f.submit "Send" %>
-<% end %>
+<h2 align="center">Контакти</h2>
+
+<div class="row">
+   <div class="col-sm-6">
+       <table align="center">
+           <tr>
+                <td><i class="	glyphicon glyphicon-earphone"></i> Наші телефони:</td>
+            </tr>
+            <tr>
+              <td>+380 (66) 51 63 606 </td>
+            </tr>
+            <tr>
+              <td>+380 (68) 90 56 527 </td>
+            </tr>
+        </table>
+   </div>
+   <div class="col-sm-6">
+       <table align="center">
+           <tr>
+                <td><i class="glyphicon glyphicon-envelope"></i> Почта:</td>
+                <td>mail@uzhnu.edu.ua</td>
+            </tr>
+            <tr>
+              <td><i class="glyphicon glyphicon-send"></i> Телеграм:</td>
+              <td>@dulgeoion</td>
+            </tr>
+            <tr>
+              <td><i class="	glyphicon glyphicon-phone-alt"></i> Skype:</td>
+              <td>duri-d265</td>
+            </tr>
+        </table>
+   </div>
+</div>
+<div class="feedback">
+     <h3 align="center">Напишіть нам листа!</h3>
+  <%= form_for :letter, class: "form-group", url: letters_path do |f| %>
+  <label for="usr">Ім'я <span class="red-star">*</span>:</label>
+    <%= f.text_field :name, class: "form-control "%>
+    <label for="usr">Email<span class="red-star">*</span>:</label>
+    <%= f.text_field :email, class: "form-control " %>
+    <label for="usr">Телефон<span class="red-star">*</span>:</label>
+    <%= f.text_field :phone, class: "form-control " %>
+    <label for="usr">Текст повідомлення<span class="red-star">*</span>  :</label>
+    <%= f.text_area :body, class: "form-control " %>
+    <%= f.submit "Відправити!", class: "btn btn-default" %>
+  <% end %>
+
+ </div>
