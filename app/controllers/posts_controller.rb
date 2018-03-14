@@ -38,6 +38,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @photos = @post.attachments
   end
 
   def destroy
