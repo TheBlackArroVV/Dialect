@@ -176,7 +176,7 @@ a.article {
 
 
 footer {
-	color: #ccc;
+	color: #ddd;
 }
 
 /* MAP --------------------------------------------------------------------- */
@@ -299,4 +299,12 @@ footer {
 	text-align: center;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
+}
+
+/* LOGIN AND REGISTRATION */
+
+.login-screen {
+	width: 60%;
+	margin-left: 20%;
+	color: #413c3c;
 }
