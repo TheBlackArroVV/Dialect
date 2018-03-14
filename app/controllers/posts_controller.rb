@@ -17,6 +17,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     pp @post
     if @post.save
+      if params[:images]
+        params[:images].each do |photo|
+          @files = @post.attachments.create(photo: photo)
+        end
+      end
       redirect_to root_path
     else
       render '/posts/new'
@@ -41,6 +46,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def attachment_params
+    params.require(:attachments).permit(:post_id, :photo)
+  end
 
   def post_params
     params.require(:post).permit(:article, :body, :category_id, :mainphoto)

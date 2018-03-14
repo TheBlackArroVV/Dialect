@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314162743) do
+ActiveRecord::Schema.define(version: 20180314164120) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20180314162743) do
   create_table "attachments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string "post_id"
+    t.index ["post_id"], name: "index_attachments_on_post_id"
   end
 
   create_table "categories", force: :cascade do |t|
