@@ -1,5 +1,6 @@
 <%= link_to 'New', new_post_path %><br/>
 <% @articles.each do |a| %>
+  <%= link_to a.article, post_path(a.id) %>
   <%= a.article %>
   <%= a.body %>
   <%= link_to 'Edit', edit_post_path(a.id) %>

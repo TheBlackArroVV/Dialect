@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Category.create(name: "Новина")
 Category.create(name: "Стаття")
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

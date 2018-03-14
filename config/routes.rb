@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
-  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :users
   post '/words/find_region', to: 'words#find_region'
   post '/words/find_district', to: 'words#find_district'
   post '/words/find_city', to: 'words#find_city'

@@ -1,6 +1,6 @@
 <%= link_to 'New', new_post_path %><br/>
 <% @news.each do |n| %>
-  <%= n.article %>
+  <%= link_to n.article, post_path(n.id) %>
   <%= n.body %>
   <%= link_to 'Edit', edit_post_path(n.id) %>
   <%= link_to 'Delete', post_path(n.id), method: :delete %>

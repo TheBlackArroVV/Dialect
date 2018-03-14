@@ -37,6 +37,9 @@ gem 'bootstrap-sass'
 # for ajax
 gem 'jquery-rails'
 
+# upload photos
+gem 'paperclip'
+
 # regestration and administrattion
 gem 'devise'
 gem 'activeadmin'

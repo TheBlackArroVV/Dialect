@@ -1,6 +1,8 @@
 <%= f.label :article %>
-<%= f.text_field :article %>
+<%= f.text_field :article %><br/>
 <%= f.label :body %>
-<%= f.text_area :body %>
+<%= f.text_area :body %><br/>
+<%= f.label :mainphoto %>
+<%= f.file_field :mainphoto %>
 <%= select_tag "category_id", options_from_collection_for_select(Category.all, :id, :name) %><br/>
 <%= f.submit "Save" %>

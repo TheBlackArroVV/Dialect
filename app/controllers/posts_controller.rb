@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:destroy, :edit, :update]
+  before_action :find_post, only: [:destroy, :edit, :update, :show]
 
   def news
     @news = Post.where(category_id: 1)
@@ -32,6 +32,9 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+  end
+
   def destroy
     @post.destroy
     redirect_to '/news'
@@ -40,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:article, :body, :category_id)
+    params.require(:post).permit(:article, :body, :category_id, :mainphoto)
   end
 
   def find_post
