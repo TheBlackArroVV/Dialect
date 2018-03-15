@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         registrations: 'registrations'
     }
-  end
   devise_scope :user do
     get '/login', to: 'devise/sessions#new'
     get '/registration', to: 'devise/registrations#new'
@@ -24,5 +23,6 @@ Rails.application.routes.draw do
   get '/contacts', to: 'letters#index'
   get '/map', to: 'pages#map'
   get '/about-us', to: 'pages#about_us'
+  get '/profile', to: 'users#profile'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
