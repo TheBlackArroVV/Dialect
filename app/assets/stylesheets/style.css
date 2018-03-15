@@ -223,12 +223,48 @@ footer {
 .articles .article {
 	margin: 0 0 50px 0;
 	padding: 0;
-
 }
 
 .red-star {
 	color: red;
 }
+
+/* ARTICLE SHOW */
+
+.article-show {
+	box-shadow: 0px 2px 20px 0px #ddd;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.article-show img {
+	max-height: 500px;
+	width: 100%;
+	object-fit: cover;
+	vertical-align: middle;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.article-show .title, .article-show .category{
+	text-align: center;
+}
+
+.article-show .category {
+	padding-top: 25px;
+
+}
+.post p{
+	padding: 20px 50px;
+}
+
+.article-control-links {
+	padding-right: 50px;
+	padding-bottom: 20px;
+	text-align: right;
+
+}
+
 /* CONTACTS */
 .feedback form {
 	width: 60%;
@@ -238,6 +274,9 @@ footer {
 .feedback form .form-control {
 	margin-bottom: 10px;
 }
+
+
+
 
 /* ABOUT US ------------------------------------------------ */
 
