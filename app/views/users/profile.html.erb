@@ -2,11 +2,12 @@
     <div class="about-user">
         <div class="user-avatar" >
           <%= image_tag current_user.avatar.url %>
+        </div>
         <div class="user-main-info">
             <h3><%= current_user.name %> <% current_user.surname %></h3>
             <div class="basic-info">
                 <h4>Основна інформація</h4>
-                <strong>Стать</strong>: Мужик <br/>
+                <strong>Стать</strong>:  <% current_user.sex %> <br/>
                 <strong>Дата народження</strong>: <% current_user.birthdate %><br/>
                 <strong>Місто</strong>: <% current_user.city %> <br/>
                 <strong>Країна</strong>: <% current_user.country %> <br/>
@@ -21,12 +22,11 @@
             </div>
             <div class="about-yourself">
                 <h4>Про себе</h4>
-                <p>  І туй шось по укр обих боло
+                <p>   <% current_user.about %>
                 </p>
             </div>
         </div>
     </div>
-  </div>
     <div class="user-articles">
         <h2 align="center">Публікації</h2>
             <div class="row article-row">
