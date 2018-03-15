@@ -1,10 +1,10 @@
-<%= link_to 'Додати статтю', new_post_path , class: "btn btn-default"%><br/>
+<%= link_to 'Додати статтю', new_post_path , class: "btn btn-default" if user_signed_in? %><br/>
 <% @articles.each do |a| %>
   <%= link_to a.article, post_path(a.id) %>
   <%= a.article %>
   <%= sanitize(a.body) %>
   <% if @post.user_id.to_i.equal?(current_user.id) %>
-    <div class="article-control-links">
+    <div class="article-control-links">s
     <hr align="right" width="25%">
       <%= link_to 'Редагувати', edit_post_path(@post.id) %>
       <%= link_to 'Видалити', post_path(@post.id), method: :delete %>

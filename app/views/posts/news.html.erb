@@ -1,4 +1,4 @@
-<%= link_to 'Додати новину', new_post_path , class: "btn btn-default"%><br/>
+<%= link_to 'Додати новину', new_post_path , class: "btn btn-default" if user_signed_in? %><br/>
 <% @news.each do |n| %>
   <%= link_to n.article, post_path(n.id) %>
   <%= sanitize(n.body) %>
