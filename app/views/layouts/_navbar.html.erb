@@ -17,10 +17,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/contacts">Контакти</a>
         </li>
+        <% if !user_signed_in? %>
       <li class="nav-item">
         <a class="nav-link" href="/login">Вхід</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/registration">Реєстрація</a>
       </li>
+      <% else %>
+      <li class="nav-item">
+          <a class="nav-link" href="/registration">Профіль</a>
+      </li>
+      <% end %>
   </ul>
