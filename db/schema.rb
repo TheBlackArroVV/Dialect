@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314165638) do
+ActiveRecord::Schema.define(version: 20180315114023) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -89,7 +89,9 @@ ActiveRecord::Schema.define(version: 20180314165638) do
     t.string "mainphoto_content_type"
     t.integer "mainphoto_file_size"
     t.datetime "mainphoto_updated_at"
+    t.string "user_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "role_categories", force: :cascade do |t|
@@ -130,7 +132,9 @@ ActiveRecord::Schema.define(version: 20180314165638) do
     t.string "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_id"
     t.index ["city_id"], name: "index_words_on_city_id"
+    t.index ["user_id"], name: "index_words_on_user_id"
   end
 
 end

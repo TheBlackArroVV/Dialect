@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
 before_action :find_word, only: [:destroy, :edit, :update]
+skip_before_action :verify_authenticity_token
 
   def index
     @words = Word.all
@@ -11,6 +12,11 @@ before_action :find_word, only: [:destroy, :edit, :update]
   def create
     @city = City.where(city: params.values[0])
     @word = Word.new
+    if user_signed_in?
+      @word.user_id = current_user.id
+    else
+      @word.user_id = 1
+    end
     @word.city_id = @city.first.id
     @word.official_word = params.values[1]
     @word.dialect_word = params.values[2]
@@ -59,7 +65,7 @@ before_action :find_word, only: [:destroy, :edit, :update]
 
   private
     def word_params
-      params.require(:word).permit(:official_word, :dialect_word, :city_id)
+      params.require(:word).permit(:official_word, :dialect_word, :city_id, :user_id)
     end
 
     def find_word
