@@ -1,5 +1,5 @@
 <h2 align="center">Cтатті</h2>
-<%= link_to 'Додати статтю', new_post_path , class: "btn btn-default"%><br/>
+<%= link_to 'Додати статтю', new_post_path , class: "btn btn-default" if user_signed_in?%><br/>
 <div class="articles">
 <% @articles.each do |a| %>
  <div class="article col-sm-12 col-xs-12">
@@ -19,7 +19,7 @@
        </div>
     <% end %>
   </div>
-    
+
   </div>
 <% end %>
 </div>

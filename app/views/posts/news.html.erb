@@ -1,4 +1,4 @@
-<%= link_to 'Додати новину', new_post_path , class: "btn btn-default"%><br/>
+<%= link_to 'Додати новину', new_post_path , class: "btn btn-default" if user_signed_in?%><br/>
 <div class="articles">
 <% @news.each do |n| %>
 <div class="article col-sm-12 col-xs-12">

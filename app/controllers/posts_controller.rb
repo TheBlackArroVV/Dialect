@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:destroy, :edit, :update, :show]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def news
     @news = Post.where(category_id: 1)
