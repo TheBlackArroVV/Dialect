@@ -4,25 +4,25 @@
           <%= image_tag current_user.avatar.url %>
         </div>
         <div class="user-main-info">
-            <h3><%= current_user.name %> <% current_user.surname %></h3>
+            <h3><%= current_user.name %> <%= current_user.surname %> <%= link_to "(Редагувати профіль)",  edit_user_registration_url%> </h3> 
             <div class="basic-info">
                 <h4>Основна інформація</h4>
                 <strong>Стать</strong>: <%= current_user.sex %> <br/>
-                <strong>Дата народження</strong>: <% current_user.birthdate %><br/>
-                <strong>Місто</strong>: <% current_user.city %> <br/>
-                <strong>Країна</strong>: <% current_user.country %> <br/>
+                <strong>Дата народження</strong>: <%= current_user.birthdate %><br/>
+                <strong>Місто</strong>: <%= current_user.city %> <br/>
+                <strong>Країна</strong>: <%= current_user.country %> <br/>
             </div>
             <div class="activity">
                 <h4>Діяльність</h4>
-                <strong>Вид діяльності</strong>: <% current_user.activity %>  <br/>
-                <strong>Освіта</strong>: <% current_user.education %>  <br/>
-                <strong>Місце навчання</strong>: <% current_user.university %> <br/>
-                <strong>Посада</strong>: <% current_user.postition %>  <br/>
-                <strong>Наукова степінь</strong>: <% current_user.degree %>  <br/>
+                <strong>Вид діяльності</strong>: <%= current_user.activity %>  <br/>
+                <strong>Освіта</strong>: <%= current_user.education %>  <br/>
+                <strong>Місце навчання</strong>: <%= current_user.university %> <br/>
+                <strong>Посада</strong>: <%= current_user.postition %>  <br/>
+                <strong>Наукова степінь</strong>: <%= current_user.degree %>  <br/>
             </div>
             <div class="about-yourself">
                 <h4>Про себе</h4>
-                <p>   <% current_user.about %>
+                <p>   <%= current_user.about %>
                 </p>
             </div>
         </div>
