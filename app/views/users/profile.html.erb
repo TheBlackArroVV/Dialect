@@ -1,1 +1,63 @@
-<%= current_user.id %>
+<section class="profile">
+    <div class="about-user">
+        <div class="user-avatar" >
+          <%= image_tag current_user.avatar.url %>
+        <div class="user-main-info">
+            <h3><%= current_user.name %> <% current_user.surname %></h3>
+            <div class="basic-info">
+                <h4>Основна інформація</h4>
+                <strong>Стать</strong>: Мужик <br/>
+                <strong>Дата народження</strong>: <% current_user.birthdate %><br/>
+                <strong>Місто</strong>: <% current_user.city %> <br/>
+                <strong>Країна</strong>: <% current_user.country %> <br/>
+            </div>
+            <div class="activity">
+                <h4>Діяльність</h4>
+                <strong>Вид діяльності</strong>: <% current_user.activity %>  <br/>
+                <strong>Освіта</strong>: <% current_user.education %>  <br/>
+                <strong>Місце навчання</strong>: <% current_user.university %> <br/>
+                <strong>Посада</strong>: <% current_user.postition %>  <br/>
+                <strong>Наукова степінь</strong>: <% current_user.degree %>  <br/>
+            </div>
+            <div class="about-yourself">
+                <h4>Про себе</h4>
+                <p>  І туй шось по укр обих боло
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+    <div class="user-articles">
+        <h2 align="center">Публікації</h2>
+            <div class="row article-row">
+                    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
+                        <div class="img">
+                        <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'></div>
+                        <div class="title">
+                            <h5>Новина</h5>
+                            <hr class="blog-hr">
+                            <h3 class="">Діалекти то супер</h3>
+                        </div>
+                    </a>
+                    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
+                        <div class="img">
+                        <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'>
+                    </div>
+                        <div class="title">
+                            <h5>Новина</h5>
+                            <hr class="blog-hr">
+                            <h3 class="">Діалекти то суперкльовонайс</h3>
+                        </div>
+                    </a>
+                    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
+                        <div class="img">
+                            <img src="img/geran-de-klerk-136351.jpg" alt="" class='thumb img-responsive'>
+                        </div>
+                        <div class="title">
+                            <h5>Новина</h5>
+                            <hr class="blog-hr">
+                            <h3 class="">Довга і нестандартна назва, в якій опишуть всю статтю окремо</h3>
+                        </div>
+                    </a>
+                </div>
+</section>

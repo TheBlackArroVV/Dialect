@@ -11,6 +11,7 @@ font-family: 'Spectral', serif;
 body {
 	color: #3c3c3c;
 	background-color: #f3f5f2;
+	font-family: 'Spectral', serif;
 }
 
 h1 {
@@ -352,7 +353,7 @@ footer {
 	color: #413c3c;
 }
 
-/* PROFILE */
+//* PROFILE */
 
 .profile {
 	/* padding: 0 15px; */

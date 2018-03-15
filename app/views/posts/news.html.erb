@@ -1,8 +1,24 @@
-<%= link_to 'Додати новину', new_post_path , class: "btn btn-default" if user_signed_in? %><br/>
+<%= link_to 'Додати новину', new_post_path , class: "btn btn-default" if user_signed_in?%><br/>
+<div class="articles">
 <% @news.each do |n| %>
-  <%= link_to n.article, post_path(n.id) %>
-  <%= sanitize(n.body) %>
-  <%= link_to 'Edit', edit_post_path(n.id) %>
-  <%= link_to 'Delete', post_path(n.id), method: :delete %>
-  <br/>
+<div class="article col-sm-12 col-xs-12">
+   <div class="img">
+     <%= image_tag n.mainphoto.url , class: 'img-responsive' %>
+   </div>
+   <div class="title">
+     <h5><%= n.category.name %></h5>
+     <hr class="blog-hr">
+     <h3 class=""><%= link_to n.article, post_path(n.id) %></h3>
+     <%= truncate sanitize(n.body), length: 100, escape: false %>
+   <% if n.user_id.to_i.equal?(current_user.id) %>
+     <div class="article-control-links">
+       <hr align="right" width="25%">
+       <%= link_to 'Редагувати', edit_post_path(n.id) %>
+       <%= link_to 'Видалити', post_path(n.id), method: :delete %>
+      </div>
+   <% end %>
+ </div>
+
+ </div>
 <% end %>
+</div>
