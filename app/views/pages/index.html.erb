@@ -14,68 +14,35 @@
   <h2 align="center">Останні новини</h2>
 
   <div class="row article-row">
-    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
-      <div class="img">
-      <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'></div>
-      <div class="title">
-        <h5>Новина</h5>
-        <hr class="blog-hr">
-        <h3 class="">Діалекти то супер</h3>
+    <% @news.each do |n| %>
+      <div class="article col-sm-4 col-xs-12">
+        <div class="img">
+          <%= image_tag n.mainphoto.url, class: 'thumb img-responsive' %>
+        </div>
+        <div class="title">
+          <h5><%= n.category.name %></h5>
+          <hr class="blog-hr">
+          <h3 class=""><%= link_to n.article, post_path(n.id) %></h3>
+        </div>
       </div>
-    </a>
-    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
-      <div class="img">
-      <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'>
-    </div>
-      <div class="title">
-        <h5>Новина</h5>
-        <hr class="blog-hr">
-        <h3 class="">Діалекти то суперкльовонайс</h3>
-      </div>
-    </a>
-    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
-      <div class="img">
-        <img src="img/geran-de-klerk-136351.jpg" alt="" class='thumb img-responsive'>
-      </div>
-      <div class="title">
-        <h5>Новина</h5>
-        <hr class="blog-hr">
-        <h3 class="">Довга і нестандартна назва, в якій опишуть всю статтю окремо</h3>
-      </div>
-    </a>
+    <% end %>
   </div>
 
   <h2 align="center">Останні записи</h2>
 
   <div class="row article-row">
+    <% @articles.each do |a| %>
     <div class="article col-sm-4 col-xs-12">
       <div class="img">
-      <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'></div>
+        <%= image_tag a.mainphoto.url, class: 'thumb img-responsive' %>
+      </div>
       <div class="title">
-        <h5>Запис</h5>
+        <h5><%= a.category.name %></h5>
         <hr class="blog-hr">
-        <h3 class="">Діалекти то супер</h3>
-      </div>			</div>
-    <div class="article col-sm-4 col-xs-12">
-      <div class="img">
-      <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'>
-    </div>
-      <div class="title">
-        <h5>Запис</h5>
-        <hr class="blog-hr">
-        <h3 class="">Діалекти то суперкльовонайс</h3>
+        <h3 class=""><%= link_to a.article, post_path(a.id) %></h3>
       </div>
     </div>
-    <div class="article col-sm-4 col-xs-12">
-      <div class="img">
-        <img src="img/geran-de-klerk-136351.jpg" alt="" class='thumb img-responsive'>
-      </div>
-      <div class="title">
-        <h5>Запис</h5>
-        <hr class="blog-hr">
-        <h3 class="">Довга і нестандартна назва, в якій опишуть всю статтю окремо</h3>
-      </div>
-  </div>
+    <% end %>
   </div>
 
 
