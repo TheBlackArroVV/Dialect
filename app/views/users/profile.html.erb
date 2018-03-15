@@ -6,7 +6,7 @@
             <h3><%= current_user.name %> <% current_user.surname %></h3>
             <div class="basic-info">
                 <h4>Основна інформація</h4>
-                <strong>Стать</strong>: Мужик <br/>
+                <strong>Стать</strong>: <%= current_user.sex %> <br/>
                 <strong>Дата народження</strong>: <% current_user.birthdate %><br/>
                 <strong>Місто</strong>: <% current_user.city %> <br/>
                 <strong>Країна</strong>: <% current_user.country %> <br/>
