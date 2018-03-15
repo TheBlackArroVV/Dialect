@@ -391,6 +391,10 @@ footer {
 
 }
 
+.user-articles .article {
+	margin-bottom: 25px;	
+}
+
 /* PROFILE SETTINGS */
 
 .form-control, .form-control-file {

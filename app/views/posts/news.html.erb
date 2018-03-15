@@ -1,3 +1,4 @@
+<h2 align="center">Новини</h2>
 <%= link_to 'Додати новину', new_post_path , class: "btn btn-default" if user_signed_in?%><br/>
 <div class="articles">
 <% @news.each do |n| %>

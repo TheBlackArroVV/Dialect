@@ -4,7 +4,7 @@
           <%= image_tag current_user.avatar.url %>
         </div>
         <div class="user-main-info">
-            <h3><%= current_user.name %> <%= current_user.surname %> <%= link_to "(Редагувати профіль)",  edit_user_registration_url%> </h3> 
+            <h3><%= current_user.name %> <%= current_user.surname %> <%= link_to "(Редагувати профіль)",  edit_user_registration_url%> </h3>
             <div class="basic-info">
                 <h4>Основна інформація</h4>
                 <strong>Стать</strong>: <%= current_user.sex %> <br/>
@@ -30,34 +30,18 @@
     <div class="user-articles">
         <h2 align="center">Публікації</h2>
             <div class="row article-row">
-                    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
+              <% @posts.each do |p| %>
+                    <div  class="article col-sm-4 col-xs-12">
                         <div class="img">
-                        <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'></div>
-                        <div class="title">
-                            <h5>Новина</h5>
-                            <hr class="blog-hr">
-                            <h3 class="">Діалекти то супер</h3>
+                          <%= image_tag p.mainphoto.url, class: 'thumb img-responsive' %>
                         </div>
-                    </a>
-                    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
-                        <div class="img">
-                        <img src="img/matt-palmer-254999.jpg" alt="" class='thumb img-responsive'>
+                        <div class="title">
+                            <h5><%= p.category.name %></h5>
+                            <hr class="blog-hr">
+                            <h3 class=""><%= link_to p.article, post_path(p.id) %></h3>
+                        </div>
                     </div>
-                        <div class="title">
-                            <h5>Новина</h5>
-                            <hr class="blog-hr">
-                            <h3 class="">Діалекти то суперкльовонайс</h3>
-                        </div>
-                    </a>
-                    <a href="kaska.ri" class="article col-sm-4 col-xs-12">
-                        <div class="img">
-                            <img src="img/geran-de-klerk-136351.jpg" alt="" class='thumb img-responsive'>
-                        </div>
-                        <div class="title">
-                            <h5>Новина</h5>
-                            <hr class="blog-hr">
-                            <h3 class="">Довга і нестандартна назва, в якій опишуть всю статтю окремо</h3>
-                        </div>
-                    </a>
+                <% end %>
                 </div>
+      </div>
 </section>
