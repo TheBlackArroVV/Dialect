@@ -1,7 +1,7 @@
 <div class="edit-profile">
 <h2>Редагування профілю</h2>
 
-<%= form_for(resource, as: resource_name, url: user_password_path, html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
 
@@ -29,6 +29,7 @@
     <%= f.text_field :country,  class: "form-control", autocomplete: "on" %>
 
     <label>Аватар:</label>
+    <%= f.file_field :avatar %>
 
 
   </div>
