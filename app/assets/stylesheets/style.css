@@ -353,10 +353,14 @@ footer {
 
 /* PROFILE SETTINGS */
 
-.form-control {
+.form-control, .form-control-file {
 	margin-bottom: 10px;
 }
 
 .edit-profile .form-control {
 	width: 20%;
+}
+
+textarea.form-control {
+		width: 40% !important;
 }

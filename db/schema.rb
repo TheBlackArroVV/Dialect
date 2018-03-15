@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20180315130305) do
     t.string "activity"
     t.string "education"
     t.string "university"
-    t.string "postition"
+    t.string "position"
     t.string "degree"
     t.string "about"
     t.string "country"

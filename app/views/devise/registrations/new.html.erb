@@ -5,8 +5,18 @@
     <%= devise_error_messages! %>
 
     <div class="field">
+      <label>Ім'я'<span class="red-star">*</span>:</label>
+      <%= f.text_field :email, class: "form-control", autofocus: true %>
+    </div>
+
+    <div class="field">
+      <label>Призвіща<span class="red-star">*</span>:</label>
+      <%= f.text_field :surname, class: "form-control"  %>
+    </div>
+
+    <div class="field">
       <label>Пошта<span class="red-star">*</span>:</label>
-      <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, class: "form-control", autocomplete: "email" %>
     </div>
 
     <div class="field">
