@@ -23,7 +23,7 @@ class PostsController < ApplicationController
           @files = @post.attachments.create(photo: photo)
         end
       end
-      redirect_to root_path
+      redirect_to @post
     else
       render '/posts/new'
     end
