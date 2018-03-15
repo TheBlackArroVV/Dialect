@@ -11,3 +11,4 @@ RoleCategory.create(name: 'Модератор')
 RoleCategory.create(name: 'Адміністратор')
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 User.create(email: 'guest@example.com', password: 'password')
+User.create(email: 'theblackarrovv@gmail.com', password: '$2a$11$.5kxM3XgftwpiP7SKL.qpOLhUy1SdPtPawKHBz8rbLBZ1B7eA9jh.')

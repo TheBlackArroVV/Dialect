@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315123431) do
+ActiveRecord::Schema.define(version: 20180315130305) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -109,22 +109,6 @@ ActiveRecord::Schema.define(version: 20180315123431) do
     t.index ["user_id"], name: "index_roles_on_user_id"
   end
 
-  create_table "user_informations", force: :cascade do |t|
-    t.string "name"
-    t.string "user_id"
-    t.string "surname"
-    t.date "birthday"
-    t.string "activity"
-    t.string "education"
-    t.string "university"
-    t.string "position"
-    t.string "degree"
-    t.string "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_informations_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -138,6 +122,17 @@ ActiveRecord::Schema.define(version: 20180315123431) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "surname"
+    t.date "birthdate"
+    t.string "activity"
+    t.string "education"
+    t.string "university"
+    t.string "postition"
+    t.string "degree"
+    t.string "about"
+    t.string "country"
+    t.string "city"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
