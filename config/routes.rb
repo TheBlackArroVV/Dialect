@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get '/login', to: 'devise/sessions#new'
     get '/registration', to: 'devise/registrations#new'
     post '/registration', to: 'devise/registrations#create'
- end
+  end
+  get '/map', to: 'pages#map'
+  post '/map', to: 'pages#map'
   post '/words/find_region', to: 'words#find_region'
   post '/words/find_district', to: 'words#find_district'
   post '/words/find_city', to: 'words#find_city'

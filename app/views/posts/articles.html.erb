@@ -2,7 +2,7 @@
 <% @articles.each do |a| %>
   <%= link_to a.article, post_path(a.id) %>
   <%= a.article %>
-  <%= a.body %>
+  <%= sanitize(a.body) %>
   <%= link_to 'Edit', edit_post_path(a.id) %>
   <%= link_to 'Delete', post_path(a.id), method: :delete %><br/>
 <% end %>

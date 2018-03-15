@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    params[:post][:user_id] = current_user.id
     params[:post][:category_id] = params[:category_id]
     @post = Post.new(post_params)
     pp @post
@@ -53,7 +54,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:article, :body, :category_id, :mainphoto)
+    params.require(:post).permit(:article, :body, :category_id, :mainphoto, :user_id)
   end
 
   def find_post

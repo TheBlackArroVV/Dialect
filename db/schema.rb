@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314165638) do
+ActiveRecord::Schema.define(version: 20180315123431) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -89,7 +89,9 @@ ActiveRecord::Schema.define(version: 20180314165638) do
     t.string "mainphoto_content_type"
     t.integer "mainphoto_file_size"
     t.datetime "mainphoto_updated_at"
+    t.string "user_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "role_categories", force: :cascade do |t|
@@ -105,6 +107,22 @@ ActiveRecord::Schema.define(version: 20180314165638) do
     t.datetime "updated_at", null: false
     t.index ["role_category_id"], name: "index_roles_on_role_category_id"
     t.index ["user_id"], name: "index_roles_on_user_id"
+  end
+
+  create_table "user_informations", force: :cascade do |t|
+    t.string "name"
+    t.string "user_id"
+    t.string "surname"
+    t.date "birthday"
+    t.string "activity"
+    t.string "education"
+    t.string "university"
+    t.string "position"
+    t.string "degree"
+    t.string "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_informations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -130,7 +148,9 @@ ActiveRecord::Schema.define(version: 20180314165638) do
     t.string "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_id"
     t.index ["city_id"], name: "index_words_on_city_id"
+    t.index ["user_id"], name: "index_words_on_user_id"
   end
 
 end
