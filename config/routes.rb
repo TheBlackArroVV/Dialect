@@ -22,5 +22,9 @@ Rails.application.routes.draw do
   get '/map', to: 'pages#map'
   get '/about-us', to: 'pages#about_us'
   get '/profile', to: 'users#profile'
+  get '/users-list', to: 'users#index'
+  resources :users
+  get '/search', to: 'pages#search'
+  post '/search', to: 'pages#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

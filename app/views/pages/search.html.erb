@@ -1,0 +1,23 @@
+Users<br/>
+<% if @users.present? %>
+  <% @users.each do |user|  %>
+    <%= user.email %>
+    <%= user.name %>
+    <%= user.surname %><br/>
+  <% end %>
+<% end %>
+Posts<br/>
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+    <%= image_tag post.mainphoto.url %>
+    <%= post.article %><br/>
+  <% end %>
+<% end %>
+Words<br/>
+<% if @words.present? %>
+  <% @words.each do |word| %>
+    <%= word.official_word %>
+    <%= word.dialect_word %>
+    <%= word.city.city %>
+  <% end %>
+<% end %>
