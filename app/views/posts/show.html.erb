@@ -7,8 +7,8 @@
      <hr class="blog-hr">
        <h2 class="title"><%= @post.article %></h2>
        <span class="post-body"> <%= sanitize(@post.body) %> </span>
-        
-       <% if @post.user_id.to_i.equal?(current_user.id) %>
+
+       <% if user_signed_in &&  @post.user_id.to_i.equal?(current_user.id) %>
          <div class="article-control-links">
          <hr align="right" width="25%">
            <%= link_to 'Редагувати', edit_post_path(@post.id) %>
