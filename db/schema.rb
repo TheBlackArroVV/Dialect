@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315160635) do
+ActiveRecord::Schema.define(version: 20180317130818) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 20180315160635) do
     t.float "coordy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "user_id"
+    t.string "post_id"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "letters", force: :cascade do |t|
@@ -149,6 +159,7 @@ ActiveRecord::Schema.define(version: 20180315160635) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_id"
+    t.boolean "confirmed", default: false
     t.index ["city_id"], name: "index_words_on_city_id"
     t.index ["user_id"], name: "index_words_on_user_id"
   end

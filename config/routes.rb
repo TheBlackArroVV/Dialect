@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get '/news', to: 'posts#news'
   get '/articles', to: 'posts#articles'
   resources :words
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :letters
   get '/contacts', to: 'letters#index'
   get '/map', to: 'pages#map'

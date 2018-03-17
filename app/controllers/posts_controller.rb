@@ -41,6 +41,7 @@ class PostsController < ApplicationController
 
   def show
     @photos = @post.attachments
+    @comments = @post.comments
   end
 
   def destroy

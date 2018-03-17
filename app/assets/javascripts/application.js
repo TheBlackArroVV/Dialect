@@ -17,7 +17,6 @@
 //= require tinymce-jquery
 //= require_tree .
 
-'use strict'
 
 selectRegion = data => {
   $.ajax({

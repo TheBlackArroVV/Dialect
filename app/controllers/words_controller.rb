@@ -3,21 +3,21 @@ before_action :find_word, only: [:destroy, :edit, :update]
 skip_before_action :verify_authenticity_token
 
   def index
-    @words = Word.all
+    @words = Word.where(confirmed: true)
   end
 
   def new
   end
 
   def create
-    @city = City.where(city: params.values[0])
+    city = City.where(city: params.values[0])
     @word = Word.new
     if user_signed_in?
       @word.user_id = current_user.id
     else
       @word.user_id = 1
     end
-    @word.city_id = @city.first.id
+    @word.city_id = city.first.id
     @word.official_word = params.values[1]
     @word.dialect_word = params.values[2]
     if @word.save
