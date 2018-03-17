@@ -11,7 +11,7 @@
      <hr class="blog-hr">
      <h3 class=""><%= link_to n.article, post_path(n.id) %></h3>
      <%= truncate sanitize(n.body), length: 100, escape: false %>
-   <% if user_signed_in &&  n.user_id.to_i.equal?(current_user.id) %>
+   <% if user_signed_in? && n.user_id.to_i.equal?(current_user.id) %>
      <div class="article-control-links">
        <hr align="right" width="25%">
        <%= link_to 'Редагувати', edit_post_path(n.id) %>
