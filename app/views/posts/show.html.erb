@@ -16,12 +16,12 @@
           </div>
        <% end %>
 </div>
-<% if @comments.present? %>
-  <% @comments.each do |comment| %>
-    <%= comment.user.name %>
-    <%= comment.text %>
-  <% end %>
-<% end %>
+<%# if @comments.present? %>
+  <%# @comments.each do |comment| %>
+    <%#= comment.user.name %>
+    <%#= comment.text %>
+  <%# end %>
+<%# end %>
 </div>
 </div>
 <br/>
@@ -29,9 +29,9 @@
 <div class="contariner">
 <br/>
 <div class="container">
-  <%= form_for :comment, url: post_comments_path(@post.id) do |f| %>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
-    <%= f.submit 'Save comment' %>
-  <% end %>
+  <%#= form_for :comment, url: post_comments_path(@post.id) do |f| %>
+    <%#= f.label :text %>
+    <%#= f.text_area :text %>
+    <%#= f.submit 'Save comment' %>
+  <%# end %>
 </div>
