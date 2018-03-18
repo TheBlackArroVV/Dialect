@@ -48,6 +48,10 @@ gem 'active_bootstrap_skin'
 # posts integration
 gem 'tinymce-rails'
 
+# map integration
+gem 'leaflet-ruby'
+gem 'rails-assets-leaflet.markercluster', source: 'https://rails-assets.org'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

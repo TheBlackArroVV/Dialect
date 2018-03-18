@@ -15,6 +15,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require tinymce-jquery
+//= require leaflet.js
+//= require leaflet.markercluster
 //= require_tree .
 
 
