@@ -1,13 +1,21 @@
 class PagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     @news = Post.where(category_id: 1).last(3)
     @articles = Post.where(category_id: 2).last(3)
   end
 
   def map
-    if params[:pages]
-      @words = Word.where(official_word: params[:pages][:word])
-    end
+  end
+
+  def words_search
+    pp params.keys[0]
+    @words = Word.where(official_word: params.keys[0])
+
+   respond_to do |format|
+     format.json { render json: @words }
+   end
   end
 
   def about_us

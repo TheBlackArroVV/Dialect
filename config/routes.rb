@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post '/words/find_region', to: 'words#find_region'
   post '/words/find_district', to: 'words#find_district'
   post '/words/find_city', to: 'words#find_city'
+  post '/pages/words_search', to: 'pages#words_search'
   root to: 'pages#index'
   get '/news', to: 'posts#news'
   get '/articles', to: 'posts#articles'
