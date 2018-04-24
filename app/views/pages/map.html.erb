@@ -14,7 +14,7 @@
 
   </div>
 <script type="text/jscript">
-
+let wor = 0
 selectWords = data => {
   $.ajax({
     type: 'POST',
@@ -22,7 +22,7 @@ selectWords = data => {
     data: data,
     success: function(data) {
       console.log(data)
-      words = data
+      wor = data
     },
     error: function(data) {
       console.log('error')
@@ -39,4 +39,45 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
 }).addTo(map);
+
+ let css = ['A', 'B', 'C', 'D', 'E'];
+   let dial = <?= $dialect_words?>;
+       dial.forEach(function (dic, index, dial) {
+
+
+   let markers = L.markerClusterGroup({
+       maxClusterRadius: 120,
+       iconCreateFunction: function (cluster) {
+           let markers = cluster.getAllChildMarkers();
+           let n = 0;
+           for (let i = 0; i < markers.length; i++) {
+               n += 1
+           }
+
+           let c = css[index-1];
+           return new L.DivIcon({ html: '<div><span>' + n + '</span></div>', className: 'marker-cluster marker-cluster-' + c, iconSize: new L.Point(40, 40) });
+       },
+       //Disable all of the defaults:
+       spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: true
+   });
+    index++;
+console.log(index);
+
+    let words = <?= $word ?>;
+
+
+
+    words.forEach(function (word, i, words) {
+        if(word.dialect_words == dic) {
+            let title = word.dialect_words;
+
+            let marker = L.marker(L.latLng(word.X, word.Y), {title: title});
+            marker.bindPopup(title);
+            markers.addLayer(marker);
+        }
+    });
+
+    map.addLayer(markers);
+   })
+   
 </script>
