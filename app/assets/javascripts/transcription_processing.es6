@@ -29,25 +29,6 @@ $(document).ready( () => {
         return false
     }
 
-    const format = (value) => {
-
-        switch (value) {
-            case 'е<sup>и</sup>':
-                const result = value.replace(/\</g, '&lt;').replace(/\>/g, '&gt;')
-                console.log(result)
-                // // const tmpVal = regexp.exec(value)
-                // // const fValue = tmpVal[1]
-                // // const sValue = tmpVal[2]
-                // console.log( `${fValue}^${sValue}^`)
-
-                return result
-                break
-            default:
-                return value
-                break
-        }
-    }
-
     const showNode = (id) => {
         const element = document.getElementById(id)
         const parent = element.parentElement
@@ -90,8 +71,7 @@ $(document).ready( () => {
             if (e.target.innerHTML === '˄') return showNode('roof')
             showNode('alphabet')
 
-            const input = format(e.target.innerHTML)           
-            console.log(`${input} ${e.target.innerHTML}`) 
+            const input = e.target.innerHTML           
             let match = /\[(.*?)\]/g.exec(inputField.value.toString().trim())[1] || inputField.value 
             inputField.value = `[${match + input} ]`
         }
@@ -99,7 +79,7 @@ $(document).ready( () => {
 
     document.getElementById('additional-symbols').onclick = (e) => {
         if (includes(tds, e.target)) {
-            const input = format(e.target.innerHTML)
+            const input = e.target.innerHTML
             let match = /\[(.*?)\]/g.exec(inputField.value.toString().trim())[1] || inputField.value 
             inputField.value = `[${match + input} ]`
             showNode('alphabet')
