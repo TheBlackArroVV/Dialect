@@ -32,7 +32,7 @@ skip_before_action :verify_authenticity_token
     @districts = @districts.map { |e| e.district  }
 
     respond_to do |format|
-      format.json { render json: @districts }
+      format.json { render json: @districts.uniq }
     end
   end
 
@@ -41,7 +41,7 @@ skip_before_action :verify_authenticity_token
     @cities = @cities.map { |e| e.city  }
 
     respond_to do |format|
-      format.json { render json: @cities }
+      format.json { render json: @cities.uniq }
     end
   end
 
