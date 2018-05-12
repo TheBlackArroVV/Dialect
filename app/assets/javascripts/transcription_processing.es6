@@ -4,7 +4,6 @@ $(document).ready( () => {
     // VARIABLES AND CONSTANTAS 
     let tds = document.getElementsByTagName('td')
     let inputField = document.getElementById('transcription')
-    inputField.value = "[ ]"
     let draggablePanel = document.getElementById('transcription-panel')
     const close = document.getElementsByClassName('close')[0]
     let initialCoords = {
@@ -70,9 +69,13 @@ $(document).ready( () => {
             if (e.target.innerHTML === ' ́') return showNode('emphasis')
             if (e.target.innerHTML === '˄') return showNode('roof')
             showNode('alphabet')
-
-            const input = e.target.innerHTML           
-            let match = /\[(.*?)\]/g.exec(inputField.value.toString().trim())[1] || inputField.value 
+            
+            const input = e.target.innerHTML
+            let inputFieldVal = inputField.value.toString() 
+            
+            if (!inputFieldVal.match(/\[(.*?)\]/g) || !inputFieldVal) inputField.value = inputFieldVal = `[ ${inputFieldVal} ]`
+   
+            let match = /\[(.*?)\]/g.exec(inputFieldVal.trim())[1] || inputField.value 
             inputField.value = `[${match + input} ]`
         }
     }
@@ -80,6 +83,10 @@ $(document).ready( () => {
     document.getElementById('additional-symbols').onclick = (e) => {
         if (includes(tds, e.target)) {
             const input = e.target.innerHTML
+            let inputFieldVal = inputField.value.toString() 
+
+            if (!inputFieldVal.match(/\[(.*?)\]/g) && !inputFieldVal) inputField.value = inputFieldVal = `[ ${inputFieldVal} ]`
+            
             let match = /\[(.*?)\]/g.exec(inputField.value.toString().trim())[1] || inputField.value 
             inputField.value = `[${match + input} ]`
             showNode('alphabet')
