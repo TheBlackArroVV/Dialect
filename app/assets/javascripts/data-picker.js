@@ -14,7 +14,7 @@ selectRegion = data => {
       }
     });
   }
-  
+
   selectDistrict = data => {
     $.ajax({
       type: 'POST',
@@ -30,14 +30,14 @@ selectRegion = data => {
       }
     });
   }
-  
-  addWord = (off, dial) => {
+
+  addWord = (off, dial, transcription) => {
     data = document.getElementById('city').value
     $.ajax({
       type: 'POST',
       url: '/words',
-      data: { data: data, off: off, dial: dial },
-      success: function(data, off, dial) {
+      data: { data: data, off: off, dial: dial, transcription: transcription },
+      success: function(data, off, dial, transcription) {
         console.log('success')
       },
       error: function(data) {
@@ -45,4 +45,3 @@ selectRegion = data => {
       }
     });
   }
-  
