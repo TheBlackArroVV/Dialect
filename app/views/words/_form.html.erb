@@ -45,10 +45,10 @@
 <br/>
 
 <form name="test" method="post" onsubmit="addWord(off.value,dial.value); return false;" >
-<input type="text" name="off" class="ntSaveForms" placeholder="Слово" size="40">
-<input type="text" name="dial" class="ntSaveForms" placeholder="Діалект" size="40">
-<input type="text" name="transcription" id="transcription" class="ntSaveForms" placeholder="[ Транскрипція до діалектизму ]" size="40">
-<button type="button" id="open-transcription" value="Допоміжні символи">Допоміжні символи</button>
-<button type="submit" value="Отправить">Додати</a></button>
-<%= render "words/transcription_panel" %>
+  <input type="text" name="off" class="ntSaveForms" placeholder="Слово" size="40">
+  <input type="text" name="dial" class="ntSaveForms" placeholder="Діалект" size="40">
+  <input type="text" name="transcription" id="transcription" class="ntSaveForms" placeholder="[ Транскрипція до діалектизму ]" size="40">
+  <button type="button" id="open-transcription" value="Допоміжні символи">Допоміжні символи</button>
+  <button type="submit" value="Отправить">Додати</a></button>
+  <%= render "words/transcription_panel" %>
 </form>
