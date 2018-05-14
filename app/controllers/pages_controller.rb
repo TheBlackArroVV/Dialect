@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def words_search
-    @words = Word.where(official_word: params.keys[0])
+    @words = Word.where(official_word: params.keys[0], confirmed: true)
 
    respond_to do |format|
      format.json { render json: @words }
