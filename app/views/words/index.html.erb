@@ -2,7 +2,8 @@
   <%= word.official_word %>
   <%= word.dialect_word %>
   <%= word.city.city %>
-  <%= link_to 'Edit', edit_word_path(word.id) %>
-  <%= link_to 'Delete', word_path(word.id), method: :delete %>
+  <%= link_to 'Edit', edit_word_path(word) %>
+  <%= link_to 'Delete', word_path(word), method: :delete %>
+  <%= link_to 'Approve Word', approve_word_path(word), method: :patch unless word.confirmed %>
   <br/>
 <% end %>
