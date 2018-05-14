@@ -21,11 +21,8 @@ skip_before_action :verify_authenticity_token
     @word.official_word = params.values[1]
     @word.dialect_word = params.values[2]
     @word.transcription = params.values[3]
-    if @word.save
-      redirect_to '/words'
-    else
-      render :new
-    end
+    @word.save
+    redirect_to '/map'
   end
 
   def find_region

@@ -10,7 +10,6 @@ class PagesController < ApplicationController
   end
 
   def words_search
-    pp params.keys[0]
     @words = Word.where(official_word: params.keys[0])
 
    respond_to do |format|

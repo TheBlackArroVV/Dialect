@@ -4,14 +4,12 @@
       <button type="submit" value="Отправить">Знайти</a></button>
     </form>
   </div>
-  <div class = "center">
-    <p></p>
-    <%= link_to "Додати слово", new_word_path, class: 'btn add-word-btn btn-default' %>
-    <p></p>
+
+  <div id="add-word-section" align='center'>
+    <%= render 'words/form'  %>
   </div>
 
   <div id="map" >
-
   </div>
 
 <script type="text/jscript">
@@ -42,7 +40,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 }).addTo(map);
 
  let css = ['A', 'B', 'C', 'D', 'E'];
-   let dial = <?= $dialect_words?>;
+   let dial = <?= $dialect_words ?>;
        dial.forEach(function (dic, index, dial) {
 
 
