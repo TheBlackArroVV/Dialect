@@ -22,7 +22,7 @@ skip_before_action :verify_authenticity_token
     @word.dialect_word = params.values[2]
     @word.transcription = params.values[3]
     if @word.save
-      redirect_to '/words'
+      redirect_to '/map'
     else
       render :new
     end
