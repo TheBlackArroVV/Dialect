@@ -10,20 +10,21 @@ skip_before_action :verify_authenticity_token
   end
 
   def create
-    city = City.where(city: params.values[0])
+    city = City.find_by(city: params.values[0])
     @word = Word.new
     if user_signed_in?
       @word.user_id = current_user.id
     else
       @word.user_id = 1
     end
-    @word.city_id = city.first.id
+    @word.city_id = city.id
     @word.official_word = params.values[1]
     @word.dialect_word = params.values[2]
+    @word.transcription = params.values[3]
     if @word.save
-      redirect_to '/words'
+      redirect_to '/map'
     else
-      redirect_to '/words/new'
+      render :new
     end
   end
 
@@ -32,7 +33,7 @@ skip_before_action :verify_authenticity_token
     @districts = @districts.map { |e| e.district  }
 
     respond_to do |format|
-      format.json { render json: @districts }
+      format.json { render json: @districts.uniq }
     end
   end
 
@@ -41,7 +42,7 @@ skip_before_action :verify_authenticity_token
     @cities = @cities.map { |e| e.city  }
 
     respond_to do |format|
-      format.json { render json: @cities }
+      format.json { render json: @cities.uniq }
     end
   end
 
