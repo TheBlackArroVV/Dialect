@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-before_action :find_word, only: [:destroy, :edit, :update]
+before_action :find_word, only: [:destroy, :edit, :update, :approve]
 skip_before_action :verify_authenticity_token
 
   def index
@@ -59,6 +59,12 @@ skip_before_action :verify_authenticity_token
   def destroy
     @word.destroy
     redirect_to '/words'
+  end
+
+  def approve
+    @word.confirmed = true
+    @word.save
+    redirect_to words_path
   end
 
   private

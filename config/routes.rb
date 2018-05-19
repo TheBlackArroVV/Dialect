@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   get '/news', to: 'posts#news'
   get '/articles', to: 'posts#articles'
-  resources :words
+  resources :words do
+    member do
+      patch :approve
+    end
+  end
   resources :posts do
     resources :comments
   end
