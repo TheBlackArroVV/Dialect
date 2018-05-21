@@ -13,23 +13,26 @@
   </div>
 
 <script type="text/jscript">
-let wor = 0
-selectWords = data => {
+var wor = 0
+
+const selectWords = async data => {
   $.ajax({
     type: 'POST',
     url: '/pages/words_search',
     data: data,
     success: function(data) {
-      console.log(data)
       wor = data
     },
     error: function(data) {
       console.log('error')
     }
-  });
+  })
 }
 
-let map = L.map('map').setView([48.575, 35.508], 6);
+
+console.log(wor)
+
+var map = L.map('map').setView([48.575, 35.508], 6);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -39,44 +42,45 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     id: 'mapbox.streets'
 }).addTo(map);
 
- let css = ['A', 'B', 'C', 'D', 'E'];
-   let dial = <?= $dialect_words ?>;
-       dial.forEach(function (dic, index, dial) {
-
-
-   let markers = L.markerClusterGroup({
-       maxClusterRadius: 120,
-       iconCreateFunction: function (cluster) {
-           let markers = cluster.getAllChildMarkers();
-           let n = 0;
-           for (let i = 0; i < markers.length; i++) {
-               n += 1
-           }
-
-           let c = css[index-1];
-           return new L.DivIcon({ html: '<div><span>' + n + '</span></div>', className: 'marker-cluster marker-cluster-' + c, iconSize: new L.Point(40, 40) });
-       },
-       //Disable all of the defaults:
-       spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: true
-   });
-    index++;
-console.log(index);
-
-    let words = <?= $word ?>;
-
-
-
-    words.forEach(function (word, i, words) {
-        if(word.dialect_words == dic) {
-            let title = word.dialect_words;
-
-            let marker = L.marker(L.latLng(word.X, word.Y), {title: title});
-            marker.bindPopup(title);
-            markers.addLayer(marker);
-        }
-    });
-
-    map.addLayer(markers);
-   })
+//  var css = ['A', 'B', 'C', 'D', 'E'];
+//    var dial = wor;
+//    console.log(`wor is ${dial}`)
+//        dial.forEach(function (dic, index, dial) {
+//
+//
+//    var markers = L.markerClusterGroup({
+//        maxClusterRadius: 120,
+//        iconCreateFunction: function (cluster) {
+//            let markers = cluster.getAllChildMarkers();
+//            let n = 0;
+//            for (let i = 0; i < markers.length; i++) {
+//                n += 1
+//            }
+//
+//            let c = css[index-1];
+//            return new L.DivIcon({ html: '<div><span>' + n + '</span></div>', className: 'marker-cluster marker-cluster-' + c, iconSize: new L.Point(40, 40) });
+//        },
+//        //Disable all of the defaults:
+//        spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: true
+//    });
+//     index++;
+// console.log(index);
+//
+//     var words = wor;
+//
+//
+//
+//     words.forEach(function (word, i, words) {
+//         if(word.dialect_words == dic) {
+//             let title = word.dialect_words;
+//
+//             let marker = L.marker(L.latLng(word.X, word.Y), {title: title});
+//             marker.bindPopup(title);
+//             markers.addLayer(marker);
+//         }
+//     });
+//
+//     map.addLayer(markers);
+//    })
 
 </script>
